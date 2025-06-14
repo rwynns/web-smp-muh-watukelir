@@ -539,3 +539,93 @@
         <a href="#topbar"><i class="fas fa-angle-up"></i></a>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            // Hero Area Slider
+            $("#hero-area-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: true,
+                dots: true,
+                navText: [
+                    '<i class="fas fa-angle-left"></i>',
+                    '<i class="fas fa-angle-right"></i>'
+                ],
+                navContainer: '#hero-area-nav'
+            });
+
+            // Tenaga Pendidik Slider
+            $("#tenaga-pendidik-slider").owlCarousel({
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: [
+                    '<i class="fas fa-angle-left"></i>',
+                    '<i class="fas fa-angle-right"></i>'
+                ],
+                navContainer: '#slider-tools-1',
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            // Alumni Slider
+            $("#alumni-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: [
+                    '<i class="fas fa-angle-left"></i>',
+                    '<i class="fas fa-angle-right"></i>'
+                ],
+                navContainer: '#slider-tools-2'
+            });
+
+            // Galeri Slider
+            $("#galeri-slider").owlCarousel({
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: [
+                    '<i class="fas fa-angle-left"></i>',
+                    '<i class="fas fa-angle-right"></i>'
+                ],
+                navContainer: '#slider-tools-3',
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+@endpush

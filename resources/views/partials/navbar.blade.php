@@ -65,7 +65,7 @@
                         <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
                     </li>
                     <li class="nav-item {{ Request::is('sarana-dan-prasarana') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/sarana-dan-prasarana') }}">Sarana dan Prasarana</a>
+                        <a class="nav-link" href="{{ url('/sarana-prasarana') }}">Sarana dan Prasarana</a>
                     </li>
                     <li class="nav-item {{ Request::is('ekstrakurikuler') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/ekstrakurikuler') }}">Ekstrakurikuler</a>
@@ -87,11 +87,14 @@
                             <a class="dropdown-item" href="{{ route('berita.index', 'prestasi') }}">Prestasi</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
+                    <li class="nav-item {{ Request::is('galeri') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ url('/galeri') }}">Galeri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Kontak.html">Kontak</a>
+                    </li>
+                    <li class="nav-item {{ Request::is('ppdb') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ url('/ppdb') }}">PPDB</a>
                     </li>
                 </ul>
 

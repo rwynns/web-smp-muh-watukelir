@@ -134,7 +134,7 @@ nav.navbar {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 15px 20px;
+  padding: 15px 18px;
   color: var(--main-light-color);
   font-size: 14px;
   font-weight: 500;
@@ -358,8 +358,11 @@ img.section-item-thumbnail:hover,
 }
 
 .section-title {
-  margin-bottom: 90px;
-  text-align: center;
+  font-weight: 700;
+  color: var(--main-color, #007bff);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
 }
 
 .section-title h2 {
@@ -1433,59 +1436,118 @@ a.pswp__share--download {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-@media screen and (max-width: 768px) {
-  .breadcrumb-box .breadcrumb-title p {
-    font-size: unset;
+/* PPDB Styling */
+.ppdb-info-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.ppdb-section {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.ppdb-section:last-child {
+  border-bottom: none;
+}
+
+.ppdb-section h5 {
+  color: var(--main-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.ppdb-section ul li {
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.ppdb-form-card .card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ppdb-form-card .card-header {
+  background-color: var(--main-color) !important;
+}
+
+.upload-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.upload-section h6 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.custom-file-label {
+  font-size: 0.875rem;
+}
+
+.ppdb-alert-full {
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #e7f3fe;
+  color: #31708f;
+  border: 1px solid #bce8f1;
+}
+
+.ppdb-alert-full h4 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ppdb-alert-full p {
+  margin-bottom: 0;
+}
+
+/* Download button styling */
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.card-body hr {
+  border-color: #e9ecef;
+  margin: 20px 0;
+}
+
+/* PPDB media queries */
+@media (max-width: 768px) {
+  .ppdb-info-card {
+    padding: 20px;
   }
-
-  .contact-tool .float-left,
-  .contact-tool .float-right {
-    float: none;
-    width: 100%;
+  
+  .upload-section {
+    padding: 15px;
+  }
+  
+  .ppdb-form-card {
+    margin-top: 30px;
   }
 }
-
-.pswp__zoom-wrap {
-  text-align: center;
-}
-.pswp__zoom-wrap:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-.wrapper {
-  line-height: 0;
-  width: 100%;
-  max-width: 900px;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-  text-align: left;
-  z-index: 1045;
-}
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-  width: 100%;
-}
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-video {
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* css breakpoint */
 
 @media screen and (max-width: 1200px) {
   #alumni .section-item-slider {
@@ -1822,3 +1884,118 @@ video {
 .admin-login-page .invalid-feedback {
   font-size: 80%;
 }
+
+/* CSS untuk Ekstrakurikuler */
+/* Ekstrakurikuler Card Styling */
+.ekskul-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.ekskul-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.ekskul-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.ekskul-image img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ekskul-card:hover .ekskul-image img {
+    transform: scale(1.05);
+}
+
+.ekskul-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--main-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ekskul-card .card-title {
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.ekskul-card .card-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.ekskul-card .btn-detail {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.ekskul-card .btn-detail:hover {
+    transform: translateX(5px);
+}
+
+/* Modal Ekstrakurikuler Styling */
+#ekskulModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+#ekskulModal .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 30px;
+}
+
+#ekskulModal .modal-body {
+    padding: 30px;
+}
+
+#ekskulModal .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 30px;
+}
+
+#modalImage {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#modalTitle {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+#modalContent {
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.section-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--main-color, #007bff);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-subtitle {
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }

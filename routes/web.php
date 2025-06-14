@@ -1,9 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\EkstrakurikulerController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\SaranaPrasaranaController;
+use Illuminate\Support\Facades\Route;
+
+
 
 Route::get('/', function () {
     return view('index');
@@ -13,16 +19,16 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/sarana-dan-prasarana', function () {
-    return view('sarana-prasarana');
-});
-
 Route::get('/ekstrakurikuler', function () {
     return view('ekstrakurikuler');
 });
 
 Route::get('/prestasi', function () {
     return view('prestasi');
+});
+
+Route::get('/ppdb', function () {
+    return view('ppdb');
 });
 
 // Public berita routes
@@ -53,6 +59,18 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('prestasi', PrestasiController::class);
     Route::post('prestasi/upload-image', [PrestasiController::class, 'uploadImage'])->name('prestasi.upload-image');
     Route::delete('prestasi/cleanup-images', [PrestasiController::class, 'cleanupUnusedImages'])->name('prestasi.cleanup-images');
+
+    // PPDB Routes
+    Route::get('/ppdb', [PpdbController::class, 'adminIndex'])->name('ppdb.index');
+    Route::get('/ppdb/{ppdb}', [PpdbController::class, 'adminShow'])->name('ppdb.show');
+    Route::delete('/ppdb/{ppdb}', [PpdbController::class, 'adminDestroy'])->name('ppdb.destroy');
+
+    // Galeri routes
+    Route::resource('galeri', GaleriController::class);
+    Route::resource('ekstrakurikuler', EkstrakurikulerController::class);
+    Route::resource('sarana-prasarana', SaranaPrasaranaController::class)->parameters([
+        'sarana-prasarana' => 'saranaPrasarana'
+    ]);
 });
 
 // Login routes (guest only)
@@ -69,3 +87,19 @@ Route::middleware('auth')->group(function () {
 // Public prestasi routes
 Route::get('/prestasi', [PrestasiController::class, 'publicIndex'])->name('prestasi.index');
 Route::get('/prestasi/{slug}', [PrestasiController::class, 'publicShow'])->name('prestasi.show');
+
+// PPDB Routes
+Route::get('/ppdb', [App\Http\Controllers\PPDBController::class, 'index'])->name('ppdb.index');
+Route::post('/ppdb/store', [App\Http\Controllers\PPDBController::class, 'store'])->name('ppdb.store');
+Route::get('/ppdb/download-template', [App\Http\Controllers\PPDBController::class, 'downloadTemplate'])->name('ppdb.download-template');
+
+// Frontend Galeri Route
+Route::get('/galeri', [GaleriController::class, 'frontendGaleri'])->name('galeri');
+
+// Frontend Ekstrakurikuler Routes
+Route::get('/ekstrakurikuler', [App\Http\Controllers\EkstrakurikulerController::class, 'frontendIndex'])->name('ekstrakurikuler.index');
+Route::get('/ekstrakurikuler/{id}', [App\Http\Controllers\EkstrakurikulerController::class, 'frontendShow'])->name('ekstrakurikuler.show');
+
+// Frontend Sarana Prasarana Routes
+Route::get('/sarana-prasarana', [SaranaPrasaranaController::class, 'frontendIndex'])->name('sarana-prasarana.index');
+Route::get('/sarana-prasarana/{id}', [SaranaPrasaranaController::class, 'frontendShow'])->name('sarana-prasarana.show');

@@ -1,113 +1,96 @@
 @extends('layouts.main')
+
+@section('title', 'Ekstrakurikuler - SMP Muhammadiyah Watukelir')
+
 @section('content')
-    <section>
-        <div class="breadcrumb-box clearfix">
-            <div class="container">
-                <div class="breadcrumb-title">
-                    <h3>Prestasi</h3>
-                    <p>Kumpulan Prestasi Siswa dan Sekolah - SMP Muhammadiyah Watukelir</p>
-                </div>
-                <nav aria-label="Page breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Prestasi</li>
-                    </ol>
-                </nav>
+    <div class="container konten py-5">
+        <div class="row mb-2">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Ekstrakurikuler</h2>
+                <p class="section-subtitle">Kegiatan Pengembangan Minat dan Bakat Siswa</p>
             </div>
         </div>
-    </section>
-    <section id="sarana-prasarana" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-primary">Sarana dan Prasarana</h2>
-                <p class="text-muted">Fasilitas unggulan SMP Muhammadiyah Watukelir dalam menunjang proses
-                    pembelajaran.</p>
-            </div>
-            <div class="row g-4">
-                <!-- Fasilitas -->
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-primary fs-1"><i class="fas fa-school"></i></div>
-                                <h5 class="card-title">Ruang Kelas</h5>
-                                <p class="card-text text-muted">Nyaman, ber-AC, dan dilengkapi sarana multimedia.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-success fs-1"><i class="fas fa-desktop"></i></div>
-                                <h5 class="card-title">Lab Komputer</h5>
-                                <p class="card-text text-muted">Fasilitas lengkap untuk mendukung pembelajaran TIK.</p>
+        <div class="row">
+            @forelse ($ekstrakurikuler as $item)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card ekskul-card h-100">
+                        <div class="ekskul-image">
+                            <img src="{{ asset('storage/' . $item->gambar_path) }}" class="card-img-top"
+                                alt="{{ $item->nama }}">
+                            <div class="ekskul-badge">
+                                <span>Ekstrakurikuler</span>
                             </div>
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-warning fs-1"><i class="fas fa-book-reader"></i></div>
-                                <h5 class="card-title">Perpustakaan</h5>
-                                <p class="card-text text-muted">Beragam koleksi buku dan literasi digital untuk siswa.
-                                </p>
-                            </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $item->nama }}</h5>
+                            <p class="card-text text-muted">
+                                {{ $item->deskripsi }}
+                            </p>
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-danger fs-1"><i class="fas fa-dumbbell"></i></div>
-                                <h5 class="card-title">Lapangan Olahraga</h5>
-                                <p class="card-text text-muted">Fasilitas untuk mendukung aktivitas jasmani dan
-                                    ekstrakurikuler.</p>
-                            </div>
+                        <div class="card-footer bg-white border-0">
+                            <button type="button" class="btn btn-primary btn-detail" data-bs-toggle="modal"
+                                data-bs-target="#ekskulModal" data-id="{{ $item->id }}" data-nama="{{ $item->nama }}"
+                                data-deskripsi="{{ $item->deskripsi }}"
+                                data-gambar="{{ asset('storage/' . $item->gambar_path) }}">
+                                Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
                 </div>
-
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-info fs-1"><i class="fas fa-mosque"></i></div>
-                                <h5 class="card-title">Musholla</h5>
-                                <p class="card-text text-muted">Tempat ibadah yang nyaman bagi warga sekolah.</p>
-                            </div>
-                        </div>
-                    </a>
+            @empty
+                <div class="col-12 text-center py-5">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Data ekstrakurikuler belum tersedia.
+                    </div>
                 </div>
-
-                <div class="col-md-4">
-                    <a href="detail-post.html" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 text-center border-0">
-                            <div class="card-body">
-                                <div class="mb-3 text-danger fs-1"><i class="fas fa-clinic-medical"></i></div>
-                                <h5 class="card-title">UKS</h5>
-                                <p class="card-text text-muted">Unit Kesehatan Sekolah sebagai penunjang layanan
-                                    kesehatan siswa.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforelse
         </div>
-    </section>
-
-
-
     </div>
 
-    <div id="scroll-to-top">
-        <a href="#topbar"><i class="fas fa-angle-up"></i></a>
+    <div class="modal fade" id="ekskulModal" tabindex="-1" aria-labelledby="ekskulModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ekskulModalLabel">Detail Ekstrakurikuler</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <img id="modalImage" src="" alt="" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <h4 id="modalTitle" class="mb-3"></h4>
+                            <div id="modalContent" class="text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            // Handle modal data
+            $('#ekskulModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                var nama = button.data('nama');
+                var deskripsi = button.data('deskripsi');
+                var gambar = button.data('gambar');
+
+                var modal = $(this);
+                modal.find('#modalTitle').text(nama);
+                modal.find('#modalContent').text(deskripsi);
+                modal.find('#modalImage').attr('src', gambar);
+                modal.find('#modalImage').attr('alt', nama);
+            });
+        });
+    </script>
+@endpush

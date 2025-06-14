@@ -30,12 +30,31 @@
                     <span>Prestasi</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
+            <li class="nav-item {{ request()->is('admin/galeri*') ? 'active' : '' }}">
+                <a href="{{ route('admin.galeri.index') }}" class="nav-link">
                     <i class="fas fa-images"></i>
                     <span>Galeri</span>
                 </a>
             </li>
+            <li class="nav-item {{ request()->is('admin/ekstrakurikuler*') ? 'active' : '' }}">
+                <a href="{{ route('admin.ekstrakurikuler.index') }}" class="nav-link">
+                    <i class="fas fa-images"></i>
+                    <span>Ekstrakurikuler</span>
+                </a>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/ppdb*') ? 'active' : '' }}">
+                <a href="{{ route('admin.ppdb.index') }}" class="nav-link">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>PPDB</span>
+                </a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/sarana-prasarana*') ? 'active' : '' }}">
+                <a href="{{ route('admin.sarana-prasarana.index') }}" class="nav-link">
+                    <i class="fas fa-building"></i>
+                    <span>Sarana Prasarana</span>
+                </a>
+            </li>
+
 
             <li class="nav-title">Pengguna & Pengaturan</li>
             <li class="nav-item">

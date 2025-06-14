@@ -1,105 +1,97 @@
 @extends('layouts.main')
+
+@section('title', 'Sarana Prasarana - SMP Muhammadiyah Watukelir')
+
 @section('content')
-    <section>
-        <div class="breadcrumb-box clearfix">
-            <div class="container">
-                <nav aria-label="breadcrumb sarana-prasarana">
-                    <ol class="breadcrumb brd-detail">
-                        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Sarana dan Prasarana</li>
-                    </ol>
-                </nav>
+    <div class="container konten py-5">
+        <div class="row mb-2">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Sarana dan Prasarana</h2>
+                <p class="section-subtitle">Fasilitas Penunjang Kegiatan Belajar Mengajar</p>
             </div>
         </div>
-    </section>
 
-    <div class="konten">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10 col-md-9">
-                    <section id="fasilitas">
-                        <div class="container">
-                            <article>
-                                <div class="section-body">
-                                    <h1 class="section-post-title">Sarana dan Prasarana</h1>
-                                    <div class="section-post-content">
-                                        <p>SMP Muhammadiyah Watukelir menyediakan berbagai sarana dan prasarana yang
-                                            menunjang proses belajar mengajar secara optimal. Fasilitas yang tersedia
-                                            telah dirancang untuk menciptakan lingkungan belajar yang aman, nyaman, dan
-                                            mendukung perkembangan akademik maupun non-akademik siswa.</p>
-
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-school text-primary me-2"></i>Ruang Kelas
-                                                        Nyaman</h5>
-                                                    <p>Seluruh ruang kelas dilengkapi dengan meja kursi ergonomis,
-                                                        pencahayaan yang baik, dan ventilasi yang memadai.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-desktop text-success me-2"></i>Laboratorium
-                                                        Komputer</h5>
-                                                    <p>Dilengkapi komputer modern dan akses internet untuk mendukung
-                                                        pembelajaran berbasis teknologi.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-book-reader text-warning me-2"></i>Perpustakaan
-                                                    </h5>
-                                                    <p>Koleksi buku yang lengkap dan suasana membaca yang tenang untuk
-                                                        menumbuhkan minat baca siswa.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-dumbbell text-danger me-2"></i>Lapangan
-                                                        Olahraga</h5>
-                                                    <p>Sarana olahraga seperti lapangan futsal dan voli untuk kegiatan
-                                                        fisik dan ekstrakurikuler siswa.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-clinic-medical text-info me-2"></i>UKS</h5>
-                                                    <p>Unit Kesehatan Sekolah sebagai tempat pertolongan pertama jika
-                                                        siswa mengalami gangguan kesehatan ringan.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="facility-box p-3 shadow-sm rounded bg-light h-100">
-                                                    <h5><i class="fas fa-mosque text-secondary me-2"></i>Musholla</h5>
-                                                    <p>Tempat ibadah yang bersih dan nyaman untuk menunjang kegiatan
-                                                        keagamaan siswa dan guru.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="section-post-share">
-                                        <ul class="list-unstyled">
-                                            <li>Bagikan:</li>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
+        <div class="row">
+            @forelse ($saranaPrasarana as $item)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card ekskul-card h-100">
+                        <div class="ekskul-image">
+                            <img src="{{ asset('storage/' . $item->gambar_path) }}" class="card-img-top"
+                                alt="{{ $item->nama }}">
+                            <div class="ekskul-badge">
+                                <span>Fasilitas</span>
+                            </div>
                         </div>
-                    </section>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $item->nama }}</h5>
+                            <p class="card-text text-muted">
+                                {{ Str::limit($item->deskripsi, 120) }}
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button type="button" class="btn btn-primary btn-detail" data-bs-toggle="modal"
+                                data-bs-target="#saranaPrasaranaModal" data-id="{{ $item->id }}"
+                                data-nama="{{ $item->nama }}" data-deskripsi="{{ $item->deskripsi }}"
+                                data-gambar="{{ asset('storage/' . $item->gambar_path) }}">
+                                Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="col-12 text-center py-5">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Data sarana dan prasarana belum tersedia.
+                    </div>
+                </div>
+            @endforelse
+        </div>
+    </div>
+
+    <div class="modal fade" id="saranaPrasaranaModal" tabindex="-1" aria-labelledby="saranaPrasaranaModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saranaPrasaranaModalLabel">Detail Sarana Prasarana</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <img id="modalImage" src="" alt="" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <h4 id="modalTitle" class="mb-3"></h4>
+                            <div id="modalContent" class="text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
-    </div> <!-- .row -->
-    </div> <!-- .container -->
-
-    <div id="scroll-to-top">
-        <a href="#topbar"><i class="fas fa-angle-up"></i></a>
-    </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            // Handle modal data
+            $('#saranaPrasaranaModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                var nama = button.data('nama');
+                var deskripsi = button.data('deskripsi');
+                var gambar = button.data('gambar');
+
+                var modal = $(this);
+                modal.find('#modalTitle').text(nama);
+                modal.find('#modalContent').text(deskripsi);
+                modal.find('#modalImage').attr('src', gambar);
+                modal.find('#modalImage').attr('alt', nama);
+            });
+        });
+    </script>
+@endpush
