@@ -383,156 +383,66 @@
         </div>
     </section>
 
-    <section id="berita">
+    <section id="berita" class="py-5 bg-light">
         <div class="container">
-            <div class="section-title">
-                <h2>Berita Terbaru</h2>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Berita Terbaru</h2>
+                    <p class="section-subtitle">Informasi terkini seputar SMP Muhammadiyah Watukelir</p>
+                </div>
             </div>
-            <div class="section-body">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
+
+            <div class="row">
+                @forelse($beritaTerbaru as $berita)
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card berita-card h-100">
+                            <div class="berita-image">
+                                @if ($berita->gambar_path)
+                                    <img src="{{ asset('storage/' . $berita->gambar_path) }}" class="card-img-top"
+                                        alt="{{ $berita->judul }}">
+                                @else
+                                    <img src="{{ asset('images/no-image.jpg') }}" class="card-img-top" alt="No Image">
+                                @endif
+                                <div class="berita-badge">
+                                    <span>{{ $berita->kategori->nama ?? 'Berita' }}</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="berita-meta mb-2">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar-alt me-1"></i>
+                                        {{ $berita->created_at->format('d M Y') }}
+                                    </small>
+                                </div>
+                                <h5 class="card-title">{{ $berita->judul }}</h5>
+                                <p class="card-text text-muted">
+                                    {{ Str::limit(strip_tags($berita->isi), 100) }}
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 pt-0">
+                                <a href="{{ route('berita.show', $berita->slug) }}" class="btn btn-primary btn-sm">
+                                    Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR mengadakan
-                                peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more"> […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
+                    </div>
+                @empty
+                    <div class="col-12 text-center">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> Belum ada berita terbaru.
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
-                            </div>
-                        </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR
-                                mengadakan peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more">
-                                    […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
-                            </div>
-                        </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR
-                                mengadakan peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more">
-                                    […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
-                            </div>
-                        </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR
-                                mengadakan peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more">
-                                    […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
-                            </div>
-                        </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR
-                                mengadakan peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more">
-                                    […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="section-thumbnail">
-                            <a href="detail-post.html"><img src="{{ asset('img/siswa-berqurban.jpg') }}"
-                                    alt="Gambar Siswa Berqurban"></a>
-                            <div class="tanggal">
-                                <span class="tgl">14</span>
-                                <span class="tgl-2">Oktober, 2019</span>
-                            </div>
-                        </div>
-                        <div class="section-content">
-                            <a href="detail-post.html">
-                                <h3>Siswa SMP MUHAMMADIYAH WATUKELIR Berkurban untuk Memupuk Kepedulian Sosial</h3>
-                            </a>
-                            <p>Bertepatan dengan hari Tasrikh ke-3, para siswa SMP MUHAMMADIYAH WATUKELIR
-                                mengadakan peringatan Idul Adha 1440H dengan<a href="detail-post.html" class="more">
-                                    […]</a>
-                            </p>
-                        </div>
-                        <div class="section-meta">
-                            <a href="detail-post.html">Kegiatan</a>
-                            <a href="detail-post.html"><i class="fas fa-user"></i> Admin</a>
-                        </div>
-                    </div>
-                </div> <!-- .row -->
+                @endforelse
             </div>
-            <div class="tombol-selengkapnya">
-                <a href="list-post.html" class="btn btn-more">Lihat Berita Lainnya</a>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="{{ route('berita.index') }}" class="btn btn-outline-primary">
+                        Lihat Semua Berita <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
             </div>
-        </div> <!-- .continer -->
+        </div>
     </section> <!-- section #berita -->
 
     <div id="scroll-to-top">
@@ -628,4 +538,68 @@
             });
         });
     </script>
+@endpush
+
+@push('styles')
+    <style>
+        /* Style untuk card berita di halaman index */
+        .berita-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .berita-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .berita-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .berita-image img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .berita-card:hover .berita-image img {
+            transform: scale(1.05);
+        }
+
+        .berita-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--main-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .berita-card .card-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .berita-card .card-text {
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 @endpush

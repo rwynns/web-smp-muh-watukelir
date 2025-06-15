@@ -8,12 +8,16 @@ use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\SaranaPrasaranaController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Berita;
 
 
 Route::get('/', function () {
-    return view('index');
-});
+    $beritaTerbaru = Berita::latest()
+        ->take(6)
+        ->get();
+
+    return view('index', compact('beritaTerbaru'));
+})->name('home');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -29,6 +33,10 @@ Route::get('/prestasi', function () {
 
 Route::get('/ppdb', function () {
     return view('ppdb');
+});
+
+Route::get('/kontak', function () {
+    return view('kontak');
 });
 
 // Public berita routes

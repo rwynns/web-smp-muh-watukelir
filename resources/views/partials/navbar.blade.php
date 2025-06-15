@@ -75,23 +75,26 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Berita
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('berita.index') }}">Semua Berita</a>
-                            <a class="dropdown-item" href="{{ route('berita.index', 'berita_sekolah') }}">Berita
-                                Sekolah</a>
-                            <a class="dropdown-item" href="{{ route('berita.index', 'pengumuman') }}">Pengumuman</a>
-                            <a class="dropdown-item" href="{{ route('berita.index', 'agenda') }}">Agenda</a>
-                            <a class="dropdown-item" href="{{ route('berita.index', 'prestasi') }}">Prestasi</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('berita.index') }}">Semua Berita</a></li>
+                            <li><a class="dropdown-item" href="{{ route('berita.index', 'berita_sekolah') }}">Berita
+                                    Sekolah</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{{ route('berita.index', 'pengumuman') }}">Pengumuman</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('berita.index', 'agenda') }}">Agenda</a></li>
+                            <li><a class="dropdown-item" href="{{ route('berita.index', 'prestasi') }}">Prestasi</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item {{ Request::is('galeri') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/galeri') }}">Galeri</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Kontak.html">Kontak</a>
+                    <li class="nav-item {{ Request::is('kontak') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ url('/kontak') }}">Kontak</a>
                     </li>
                     <li class="nav-item {{ Request::is('ppdb') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/ppdb') }}">PPDB</a>
