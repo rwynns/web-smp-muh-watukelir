@@ -420,7 +420,7 @@
                                 </p>
                             </div>
                             <div class="card-footer bg-white border-0 pt-0">
-                                <a href="{{ route('berita.show', ['category' => $berita->kategori->slug ?? 'uncategorized', 'slug' => $berita->slug]) }}"
+                                <a href="{{ url('/berita/' . ($berita->category ?? 'uncategorized') . '/' . $berita->slug) }}"
                                     class="btn btn-primary btn-sm">
                                     Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
