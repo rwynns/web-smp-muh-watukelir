@@ -397,14 +397,14 @@
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card berita-card h-100">
                             <div class="berita-image">
-                                @if ($berita->gambar_path)
-                                    <img src="{{ asset('storage/' . $berita->gambar_path) }}" class="card-img-top"
+                                @if ($berita->image)
+                                    <img src="{{ asset('storage/' . $berita->image) }}" class="card-img-top"
                                         alt="{{ $berita->judul }}">
                                 @else
                                     <img src="{{ asset('images/no-image.jpg') }}" class="card-img-top" alt="No Image">
                                 @endif
                                 <div class="berita-badge">
-                                    <span>{{ $berita->kategori->nama ?? 'Berita' }}</span>
+                                    <span>{{ $berita->category_name }}</span>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -416,11 +416,12 @@
                                 </div>
                                 <h5 class="card-title">{{ $berita->judul }}</h5>
                                 <p class="card-text text-muted">
-                                    {{ Str::limit(strip_tags($berita->isi), 100) }}
+                                    {{ $berita->excerpt ?? 'Tidak ada deskripsi.' }}
                                 </p>
                             </div>
                             <div class="card-footer bg-white border-0 pt-0">
-                                <a href="{{ route('berita.show', $berita->slug) }}" class="btn btn-primary btn-sm">
+                                <a href="{{ route('berita.show', ['category' => $berita->kategori->slug ?? 'uncategorized', 'slug' => $berita->slug]) }}"
+                                    class="btn btn-primary btn-sm">
                                     Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
