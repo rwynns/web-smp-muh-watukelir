@@ -75,7 +75,7 @@ class DashboardController extends Controller
             }
 
             // Ambil galeri terbaru
-            $recent_galeri = Galeri::select('id', 'title', 'created_at')
+            $recent_galeri = Galeri::select('id', 'judul', 'created_at')
                 ->latest()
                 ->limit(2)
                 ->get();
