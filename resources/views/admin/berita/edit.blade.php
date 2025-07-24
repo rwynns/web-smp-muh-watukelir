@@ -173,6 +173,8 @@
 
             // Validasi form sebelum submit dengan SweetAlert
             const form = document.getElementById('form-berita');
+            let isSubmitting = false; // Tambahkan flag untuk tracking submit
+
             form.addEventListener('submit', function(e) {
                 let isValid = true;
                 let invalidFields = [];
@@ -234,6 +236,8 @@
                         cancelButtonText: 'Batal'
                     }).then((result) => {
                         if (result.isConfirmed) {
+                            // Set flag bahwa form sedang di-submit
+                            isSubmitting = true;
                             // Submit form tanpa validasi ulang
                             this.removeEventListener('submit', arguments.callee);
                             this.submit();
@@ -263,7 +267,8 @@
 
         // Konfirmasi sebelum meninggalkan halaman jika ada perubahan
         window.addEventListener('beforeunload', function(e) {
-            if (isFormChanged()) {
+            // Cek flag isSubmitting untuk menghindari konfirmasi saat submit
+            if (isFormChanged() && !isSubmitting) {
                 const message =
                     'Anda memiliki perubahan yang belum disimpan. Yakin ingin meninggalkan halaman ini?';
                 e.returnValue = message;

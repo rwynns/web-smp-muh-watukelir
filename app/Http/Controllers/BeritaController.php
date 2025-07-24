@@ -164,6 +164,7 @@ class BeritaController extends Controller
                 ->withInput();
         }
 
+
         // Jika judul berubah, generate slug baru
         if ($request->title != $berita->title) {
             $slug = Str::slug($request->title);
