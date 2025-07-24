@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LoginController;
@@ -50,9 +51,7 @@ Route::get('/berita-sekolah', [BeritaController::class, 'publicIndex'])->default
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     // Dashboard
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Berita routes
     Route::get('berita', [BeritaController::class, 'index'])->name('berita.index');

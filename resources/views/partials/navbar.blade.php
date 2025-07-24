@@ -7,10 +7,7 @@
                         <li><a href="tel:085773716731"><i class="fas fa-phone"></i> 2147483647</a></li>
                         <li><a href="mailto:arbisyarifudin@gmail.com"><i class="fas fa-envelope"></i>
                                 smpmuhkelir@gmail.com</a></li>
-                        <li class="headline"><a href="#"><i class="fas fa-bullhorn"></i> Pendaftaran TA
-                                2025/2026
-                                telah dibuka!
-                            </a></li>
+                        <li class="headline"><a href="#"><i class="fas fa-map-marker-alt"></i> Watukelir, Jatingarang, Kec. Weru, Sukoharjo, Jawa Tengah</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-12">
@@ -30,12 +27,13 @@
 
 <header>
     <div id="head">
-        <div class="container text-center">
-            <div class="row justify-content-center">
+        <div class="container text-left">
+            <div class="row justify-content-left">
                 <div class="col-md-8">
                     <div class="brand">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('img/logo-toga.png') }}" alt="Logo" title="Logo">
+                            <img src="{{ asset('img/logo.png') }}" alt="Logo" title="Logo" style="width: 80px; height: auto;">
+
                         </a>
                         <div class="brand-title">
                             <a href="{{ url('/') }}">

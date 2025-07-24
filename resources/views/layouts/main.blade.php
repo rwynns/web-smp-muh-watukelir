@@ -36,12 +36,12 @@
                 <div class="col-lg-5 col-md-12 col-sm-12">
                     <div class="footer-col">
                         <div class="brand">
-                            <img src="{{ asset('img/logo-toga.png') }}" alt="Logo">
-                            <h1>SMP MUHAMMADIYAH WATUKELIR Teladan</h1>
+                            <img src="{{ asset('img/logo.png') }}" alt="Logo">
+                            <h1>SMP MUHAMMADIYAH WATUKELIR</h1>
                         </div>
-                        <p class="tentang">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                            eos et accusam et justo duo dolores et ea rebum.</p>
+                        <p class="tentang">Sekolah berbasis nilai-nilai Islam yang berkomitmen mencetak generasi cerdas, 
+                            berakhlak mulia, dan siap menghadapi tantangan masa depan.
+                            Didukung oleh tenaga pendidik profesional, fasilitas lengkap, dan lingkungan belajar yang nyaman serta inspiratif..</p>
                         <ul class="sosmed">
                             <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href=""><i class="fab fa-instagram"></i></a></li>
@@ -63,11 +63,10 @@
                     <div class="footer-col">
                         <h2>Navigasi</h2>
                         <ul class="footer-nav">
-                            <li><a href="">Profil</a></li>
-                            <li><a href="">Visi dan Misi</a></li>
-                            <li><a href="">Struktur Organisasi</a></li>
-                            <li><a href="">Sumber Daya Manusia</a></li>
-                            <li><a href="">Pendaftaran PPDB 2020 <span>info</span></a></li>
+                            <li><a href="{{ url('/profile') }}">Profil</a></li>
+                            <li><a href="{{ url('/profile') }}">Visi dan Misi</a></li>
+                            <li><a href="{{ url('/berita') }}">Berita Sekolah</a></li>
+                            <li><a href="{{ url('/ppdb') }}">Pendaftaran PPDB 2025 <span>info</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,8 +75,7 @@
         <div class="footer-copyright">
             <div class="container text-center">
                 <h6><a href="#">smpmuhkelir.co.id</a> &copy; 2025 - All right reserved.</h6>
-                <span class="credit">Designed by <a target="_blank" href="https://facebook.com/arbisyarifudin">Bayu
-                        Setia Abi</a></span>
+                <span class="credit"><a target="_blank" href="https://facebook.com/arbisyarifudin"></a></span>
             </div>
         </div>
     </footer>

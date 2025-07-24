@@ -9,381 +9,576 @@
                     <img class="img-fluid" src="{{ asset('img/SMPmuhkelir.jpg') }}" alt="Banner Slider 1">
                     <div class="hero-area-content">
                         <h2>Penerimaan Peserta Didik Baru TA 2025/2026 telah dibuka!</h2>
-                        <p>Silahkan anda bisa akses <a href="">ppdb.smpmuhkelir</a> untuk mendapatkan semua
+                        <p>Silahkan anda bisa akses <a href="{{ url('/ppdb') }}">ppdb.smpmuhkelir</a>untuk mendapatkan semua
                             informasi terkait pendaftaran PPDB tahun ajaran 2025/2026 SMP MUHAMMADIYAH WATUKELIR.</p>
-                        <a class="btn btn-utama">Daftar PPDB</a>
+                        <a href="{{ url('/ppdb') }}" class="btn btn-utama">Daftar PPDB</a>
                     </div>
                 </div>
                 <div class="hero-area-item">
-                    <img class="img-fluid" src="{{ asset('img/SMPmuhkelir.jpg') }}" alt="Banner Slider 1">
+                    <img class="img-fluid" src="{{ asset('img/berita22.jpg') }}" alt="Banner Slider 1">
                     <div class="hero-area-content">
-                        <h2>Title 2</h2>
-                        <p>Lorem Ipsum Dolor Sit Amet...</p>
-                        <a class="btn btn-utama">CTA button</a>
+                        <h2>Selamat Datang di Website Resmi SMP Muhammadiyah Watukelir</h2>
+                        <p>Sekolah yang membentuk karakter unggul, berakhlak mulia, dan berwawasan global</p>
+                        <a href="{{ url('/profile') }}" class="btn btn-utama">Lihat Profil Sekolah</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sambutan">
-        <div class="container">
-            <h2>Profil SMP MUHAMMADIYAH WATUKELIR</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xx" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h3>Sambutan Kepala Sekolah</h3>
-                    <p style="font-size: 14px!important;">Assalamu'alaikum. Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Rem velit sit et dolorum quia fugiat mollitia voluptatum nemo. Explicabo,
-                        itaque quaerat omnis ipsam ipsa maxime, praesentium quidem tempora quasi nemo illo architecto
-                        aspernatur soluta! Quas animi, iusto a consectetur accusamus eligendi, repudiandae voluptatum
-                        nobis inventore, non possimus blanditiis voluptates at.</p>
-                    <a href="detail-post.html" class="btn btn-utama">Baca Selengkapnya</a>
+   <section id="sambutan">
+    <div class="container">
+        <h2 class="text-center mb-4">PROFIL SMP MUHAMMADIYAH WATUKELIR</h2>
+        <div class="row align-items-center">
+            <!-- Kolom Gambar -->
+            <div class="col-md-4 mb-3">
+                <img src="{{ asset('img/fotokosong.jpg') }}" alt="Profil Sekolah" width="410" class="img-fluid rounded" />
+            </div>
+
+            <!-- Kolom Sambutan -->
+            <div class="col-md-6">
+                <h4><strong>Sambutan Kepala Sekolah</strong></h4>
+                <p style="text-align: justify;">
+                    Assalamu’alaikum Warahmatullahi Wabarakatuh. Segala puji syukur kita panjatkan ke hadirat Allah SWT atas segala limpahan rahmat dan karunia-Nya. Shalawat serta salam semoga tercurah kepada Nabi Muhammad SAW, suri teladan kita semua.
+                    Selamat datang di website resmi SMP Muhammadiyah Watukelir. Website ini kami hadirkan sebagai sarana informasi dan komunikasi antara sekolah dengan masyarakat, khususnya para orang tua, peserta didik, dan seluruh pihak yang ingin mengetahui lebih jauh tentang profil dan perkembangan sekolah kami.
+                    Sebagai sekolah yang berada di bawah naungan Persyarikatan Muhammadiyah, kami berkomitmen untuk mewujudkan generasi yang unggul dalam iman, ilmu, dan akhlak mulia, serta mampu menghadapi tantangan zaman dengan bekal karakter yang kuat dan wawasan global. 
+                    Kami percaya bahwa pendidikan berkualitas tidak hanya mengedepankan aspek akademik, namun juga pembentukan karakter Islami yang holistik. Melalui berbagai kegiatan kurikuler dan ekstrakurikuler, kami senantiasa menumbuhkan semangat belajar, kepedulian sosial, dan nilai-nilai keislaman dalam diri setiap siswa.
+                    Akhir kata, kami mengucapkan terima kasih atas kepercayaan dan dukungan semua pihak. Semoga website ini bermanfaat dan menjadi jendela informasi yang terbuka bagi semua. Wassalamu’alaikum Warahmatullahi Wabarakatuh.
+                </p>
+                <p>
+                    <strong>Kepala Sekolah<br>
+                    SMP Muhammadiyah Watukelir</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
                 </div>
             </div> <!-- .row -->
         </div> <!-- .container -->
     </section> <!-- #sambutan -->
 
-    <section id="prestasi">
-        <div class="container">
-            <div class="section-title">
-                <h2>Prestasi Terbaru</h2>
-            </div>
-            <div class="section-item">
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="Isi_prestasi1.html"><img class="section-item-thumbnail"
-                                src="{{ asset('img/prestasi1.webp') }}" alt=""></a>
-                    </div>
-                    <div class="col-md-6 col-item-kanan">
-                        <div class="section-item-title">
-                            <a href="Isi_prestasi1.html">
-                                <h3>Medali Perak dalam IOI Olympiad in Informatics/IOI di Azerbaijan </h3>
-                            </a>
-                            <div class="section-item-meta">
-                                <span><i class="far fa-calendar-alt"></i> 20 Agust, 2019 - 22 Agust, 2019</span>
-                                <span><i class="fas fa-map-marked-alt"></i> Baku, Azerbaijan</span>
-                            </div>
-                        </div>
-                        <div class="section-item-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eaque, ad odit sapiente
-                                rem accusamus tempore quas labore saepe sed enim non temporibus sequi! Nobis, quae?
-                                Rerum at excepturi unde debitis. Nemo eius minus animi sequi quidem autem voluptas
-                                rerum.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-item">
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="detail-post.html"><img class="section-item-thumbnail" src="{{ asset('img/noimage.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <div class="col-md-6 col-item-kanan">
-                        <div class="section-item-title">
-                            <a href="detail-post.html">
-                                <h3>Medali Perak dalam IOI Olympiad in Informatics/IOI di Azerbaijan </h3>
-                            </a>
-                            <div class="section-item-meta">
-                                <span><i class="far fa-calendar-alt"></i> 20 Agust, 2019 - 22 Agust, 2019</span>
-                                <span><i class="fas fa-map-marked-alt"></i> Baku, Azerbaijan</span>
-                            </div>
-                        </div>
-                        <div class="section-item-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eaque, ad odit sapiente
-                                rem accusamus tempore quas labore saepe sed enim non temporibus sequi! Nobis, quae?
-                                Rerum at excepturi unde debitis. Nemo eius minus animi sequi quidem autem voluptas
-                                rerum.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-item">
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="detail-post.html"><img class="section-item-thumbnail" src="{{ asset('img/noimage.jpg') }}"
-                                alt=""></a>
-                    </div>
-                    <div class="col-md-6 col-item-kanan">
-                        <div class="section-item-title">
-                            <a href="detail-post.html">
-                                <h3>Medali Perak dalam IOI Olympiad in Informatics/IOI di Azerbaijan </h3>
-                            </a>
-                            <div class="section-item-meta">
-                                <span><i class="far fa-calendar-alt"></i> 20 Agust, 2019 - 22 Agust, 2019</span>
-                                <span><i class="fas fa-map-marked-alt"></i> Baku, Azerbaijan</span>
-                            </div>
-                        </div>
-                        <div class="section-item-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eaque, ad odit sapiente
-                                rem accusamus tempore quas labore saepe sed enim non temporibus sequi! Nobis, quae?
-                                Rerum at excepturi unde debitis. Nemo eius minus animi sequi quidem autem voluptas
-                                rerum.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tombol-selengkapnya">
-                <a href="list-post.html" class="btn btn-more">Lihat Prestasi Lainnya</a>
-            </div>
+<section id="prestasi">
+    <div class="container">
+        <div class="section-title">
+            <h2>Prestasi Terbaru</h2>
         </div>
-    </section>
 
-    <section id="ekstrakulikuler">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ekstrakulikuler</h2>
-            </div>
-            <div class="section-body">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Kepanduan Hizbul Wathon (HW)</h4>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="section-item">
+            <div class="row">
+                <!-- Prestasi 1 -->
+                <div class="col-md-4 mb-4">
+                    <a href="{{ url('/prestasi') }}">
+                        <img class="section-item-thumbnail" src="{{ asset('img/prestasi1.webp') }}" alt="">
+                    </a>
+                    <div class="section-item-title mt-2">
+                        <a href="{{ url('/prestasi') }}">
+                            <h5>Meraih Medali Perak Pada Cabang Tapak Suci Di Ajang Olympicad 2025!</h5>
                         </a>
+                        <div class="section-item-meta">
+                            <span><i class="far fa-calendar-alt"></i> 2025</span><br>
+                            <span><i class="fas fa-map-marked-alt"></i> </span>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Olah Raga Tapak Suci Putra Muhammadiyah (TSPM)</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Palang Merah Remaja (PMR)</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Futsal</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Paskibra</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="detail-post.html">
-                            <div class="section-body-item">
-                                <div class="row row-2">
-                                    <div class="col-md-3">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h4>Seni Tari</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="section-item-body">
+                        <p>Tiga siswa terbaik SMP Muhammadiyah Watukelir berhasil meraih medali perak dalam cabang Tapak Suci pada Olympicad 2025.</p>
                     </div>
                 </div>
-                <!--.row-->
-            </div>
-        </div>
-    </section>
 
-    <section id="tenaga-pendidik">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tenaga Pendidik</h2>
-            </div>
-            <div class="section-body">
-                <div id="slider-tools-1"></div>
-                <div class="owl-carousel" id="tenaga-pendidik-slider">
-                    <div class="section-item-slider">
-                        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/foto-guru-1.jpg') }}"
-                                alt=""></a>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>SARNO, S.Pd., M.Pd</h5>
-                            </a>
-                            <h6>Guru Bahasa Indonesia</h6>
+                <!-- Prestasi 2 -->
+                <div class="col-md-4 mb-4">
+                    <a href="{{ url('/prestasi') }}">
+                        <img class="section-item-thumbnail" src="{{ asset('img/prestasi2.webp') }}" alt="">
+                    </a>
+                    <div class="section-item-title mt-2">
+                        <a href="{{ url('/prestasi') }}">
+                            <h5>Meraih Medali Perunggu Cabang Mipa Olympicad 2025</h5>
+                        </a>
+                        <div class="section-item-meta">
+                            <span><i class="far fa-calendar-alt"></i> 15 mei, 2025</span><br>
+                            <span><i class="fas fa-map-marked-alt"></i> Sragen, Jawa Tengah</span>
                         </div>
                     </div>
-                    <div class="section-item-slider">
-                        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/foto-guru-2.jpg') }}"
-                                alt=""></a>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>Drs. WARDANI</h5>
-                            </a>
-                            <h6>Guru Bimbingan Konseling</h6>
+                    <div class="section-item-body">
+                        <p>🎉 Selamat dan Sukses! 🏆
+SMP Muhammadiyah Watukelir kembali menorehkan prestasi membanggakan! Tiga siswi terbaik kami — Alifa Nadayanti, Hadifa Fakhira, dan Leyvlia Artnezta — berhasil meraih Medali Perunggu dalam Cabang MIPA pada ajang Olympicad 2025.</p>
+                    </div>
+                </div>
+
+                <!-- Prestasi 3 -->
+                <div class="col-md-4 mb-4">
+                    <a href="{{ url('/prestasi') }}">
+                        <img class="section-item-thumbnail" src="{{ asset('img/prestasi3.jpg') }}" alt="">
+                    </a>
+                    <div class="section-item-title mt-2">
+                        <a href="{{ url('/prestasi') }}">
+                            <h5>JTim GSI SMP Muhammadiyah Watukelir Raih Juara III Tingkat Kabupaten Sukoharjo 2024</h5>
+                        </a>
+                        <div class="section-item-meta">
+                            <span><i class="far fa-calendar-alt"></i> 5 Mei, 2025</span><br>
+                            <span><i class="fas fa-map-marked-alt"></i> Solo, Jawa Tengah</span>
                         </div>
                     </div>
-                    <div class="section-item-slider">
-                        <a href="detail-post.html"> <img class="foto-guru" src="{{ asset('img/foto-guru-3.jpg') }}"
-                                alt=""></a>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>HARYANI, S.Pd., M.Pd</h5>
-                            </a>
-                            <h6>Guru Matematika</h6>
-                        </div>
+                    <div class="section-item-body">
+                        <p>SMP Muhammadiyah Watukelir kembali mengukir prestasi membanggakan di dunia olahraga! Dalam ajang Gala Siswa Indonesia (GSI) SMP Tingkat Kabupaten Sukoharjo Tahun 2024, tim GSI Kecamatan Weru yang diperkuat oleh siswa-siswa terbaik kami — Ramadian, Rizal, dan Fadhil — berhasil meraih Juara III (tiga)</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tombol-selengkapnya">
-            <a href="list-post.html" class="btn btn-more">Lihat Semua Guru</a>
-        </div>
-    </section>
 
-    <section id="alumni">
-        <div class="container">
-            <div class="section-title">
-                <h2>Profil Alumni</h2>
-            </div>
-            <div class="section-body">
-                <div id="slider-tools-2"></div>
-                <div class="owl-carousel" id="alumni-slider">
-                    <div class="section-item-slider">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <a href="detail-post.html"><img class="foto-alumni"
-                                        src="{{ asset('img/bu-susi-p.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="section-item-content">
-                                    <a href="detail-post.html">
-                                        <h3>Dr. (HC) Susi Pudjiastuti</h3>
-                                    </a>
-                                    <p>Menteri Kelautan dan Perikanan dari Kabinet Kerja 2014-2019 yang juga
-                                        pengusaha pemilik dan Presdir PT ASI Pudjiastuti Marine Product,
-                                        eksportir hasil-hasil perikanan dan PT ASI Pudjiastuti Aviation atau…
-                                    </p>
-                                    <a href="detail-post.html" class="more">Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
+        <div class="tombol-selengkapnya text-center mt-3">
+            <a href="{{ url('/prestasi') }}" class="btn btn-more">Lihat Prestasi Lainnya</a>
+        </div>
+    </div>
+</section>
+
+
+   <section id="ekstrakulikuler">
+    <div class="container">
+        <div class="section-title">
+            <h2>Ekstrakurikuler</h2>
+        </div>
+        <div class="section-body">
+            <div class="row">
+
+                <!-- Hizbul Wathan -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('hizbul')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-compass fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Kepanduan Hizbul Wathan (HW)</h4></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="section-item-slider">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <a href="detail-post.html"><img class="foto-alumni"
-                                        src="{{ asset('img/prof-dwikorita.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="section-item-content">
-                                    <a href="detail-post.html">
-                                        <h3>Prof. Dwikorita Karnawati, M.Sc., Ph.D</h3>
-                                    </a>
-                                    <p>Prof. Dwikorita Karnawati, M.Sc., Ph.D adalah akademisi dan dosen
-                                        Indonesia. Dwikorita merupakan Rektor wanita pertama Universitas Gadjah
-                                        Mada, menggantikan Prof. Dr. Pratikno, M.Soc.Sc., yang...
-                                    </p>
-                                    <a href="detail-post.html" class="more">Selengkapnya <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    </a>
+                    <div id="deskripsi-hizbul" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            Hizbul Wathan (HW) adalah organisasi kepanduan Muhammadiyah yang melatih kedisiplinan, cinta tanah air, dan kepemimpinan melalui kegiatan seperti baris-berbaris, penjelajahan, dan kegiatan sosial.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="galeri">
-        <div class="container">
-            <div class="section-title">
-                <h2>Galeri / Dokumentasi</h2>
-            </div>
-            <div class="section-body">
-                <div id="slider-tools-3"></div>
-                <div class="owl-carousel" id="galeri-slider">
-                    <div class="section-item-slider">
-                        <a href="detail-post.html"><img class="foto-galeri" src="{{ asset('img/galeri-1.jpg') }}"
-                                alt=""></a>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>Kegiatan Outbound 2019</h5>
-                            </a>
-                            <h6>Kaliboyong Camp, Pakem</h6>
+                <!-- Tapak Suci -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('tapaksuci')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-fist-raised fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Tapak Suci Putera Muhammadiyah (TSPM)</h4></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="section-item-slider">
-                        <a href="detail-post.html"><img class="foto-galeri" src="{{ asset('img/galeri-2.jpeg') }}"
-                                alt=""></a>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>Album Ujian Nasional 2019</h5>
-                            </a>
-                            <h6>SMP MUHAMMADIYAH WATUKELIR</h6>
-                        </div>
-                    </div>
-                    <div class="section-item-slider">
-                        <div class="video-wrapper video-galeri">
-                            <iframe src="https://www.youtube.com/embed/n0Q_XQgvaJQ" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="section-item-caption">
-                            <a href="detail-post.html">
-                                <h5>Video Dokumentasi Reuni Akbar</h5>
-                            </a>
-                            <h6>Gedung SMP MUHAMMADIYAH WATUKELIR</h6>
-                        </div>
+                    </a>
+                    <div id="deskripsi-tapaksuci" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            Tapak Suci adalah perguruan pencak silat Muhammadiyah yang mengajarkan bela diri sekaligus membentuk karakter berani, disiplin, dan berbudi luhur melalui latihan fisik dan spiritual.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="tombol-selengkapnya">
-                <a href="list-post.html" class="btn btn-more">Lihat Galeri Lainnya</a>
+
+                <!-- PMR -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('pmr')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-briefcase-medical fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Palang Merah Remaja (PMR)</h4></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="deskripsi-pmr" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            PMR adalah kegiatan ekstrakurikuler yang melatih siswa dalam pertolongan pertama, kepedulian sosial, dan hidup sehat sebagai bagian dari pendidikan kemanusiaan sejak dini.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Futsal -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('futsal')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-futbol fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Futsal</h4></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="deskripsi-futsal" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            Futsal adalah olahraga yang mengasah kekompakan tim, kebugaran fisik, dan strategi permainan. Ekstrakurikuler ini juga membentuk semangat sportivitas dan kerja sama antar siswa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paskibra -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('paskibra')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-flag fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Paskibra</h4></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="deskripsi-paskibra" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            Paskibra melatih siswa menjadi pribadi yang disiplin dan bertanggung jawab melalui latihan baris-berbaris, upacara, dan kegiatan nasionalisme. Siswa dibina untuk tampil percaya diri dan tertib.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Seni Tari -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="javascript:void(0);" onclick="toggleDeskripsi('senitari')">
+                        <div class="section-body-item">
+                            <div class="row row-2">
+                                <div class="col-md-3"><i class="fas fa-theater-masks fa-2x"></i></div>
+                                <div class="col-md-9"><h4>Seni Tari</h4></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="deskripsi-senitari" style="display: none; padding-top: 10px;">
+                        <p style="text-align: justify;">
+                            Seni Tari adalah wadah bagi siswa untuk mengekspresikan kreativitas melalui gerak dan irama. Kegiatan ini membina kepercayaan diri, kebudayaan, dan keindahan dalam penampilan seni.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="berita" class="py-5 bg-light">
+
+<script>
+    function toggleDeskripsi(id) {
+        var deskripsi = document.getElementById("deskripsi-" + id);
+        if (deskripsi.style.display === "none") {
+            deskripsi.style.display = "block";
+        } else {
+            deskripsi.style.display = "none";
+        }
+    }
+</script>
+
+
+</section>
+
+
+<section id="tenaga-pendidik">
+    <div class="container">
+        <div class="section-title">
+            <h2>Tenaga Pendidik</h2>
+        </div>
+        <div class="section-body">
+
+            <!-- Slider Guru (Awal: 3 Guru) -->
+            <div id="slider-tools"></div>
+<div class="owl-carousel" id="tenaga-pendidik-slider">
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Hasan Azis, S.Pd.I.</h5></a>
+            <h6>Kepala Sekolah</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Warsini, S.Pd</h5></a>
+            <h6>Bahasa Inggris (7, 8ABD)<br>Wali Kelas 7B</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>May Wardani, S.IPust</h5></a>
+            <h6>Pustakawan<br>Bahasa Jawa (9), Prakarya (7, 8C)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Puput Widha Andani, S.Pd., Gr</h5></a>
+            <h6>Bahasa Indonesia (7, 8CD)<br>Wali Kelas 7A, Bendahara BOS</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Heri Kristanto, S.Pd., Gr</h5></a>
+            <h6>IPA (9), Bahasa Jawa (8)<br>Wali Kelas 9A, Waka Humas, Tim Kurikulum</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Triyatmi, S.Pd</h5></a>
+            <h6>Bahasa Inggris (8C, 9), Bahasa Jawa (7)<br>Wali Kelas 9B, Waka Kesiswaan</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Kartini, S.Pd., Gr</h5></a>
+            <h6>Bahasa Indonesia (8AB, 9)<br>Wali Kelas 8B, Bendahara Sekolah</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Asim Tri Cahyani, S.Pd</h5></a>
+            <h6>BK (7, 9), Seni (9)<br>Wali Kelas 8A, Waka Kurikulum</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Untia Pungki Rastyanti, S.Pd., G</h5></a>
+            <h6>IPA (7, 8)<br>Wali Kelas 9C</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Arizal Mulana Rusdi, S.Pd., Gr</h5></a>
+            <h6>Al Islam (7B, 8), Informatika (9)<br>Wali Kelas 9D</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Handayani, S.Pd., Gr</h5></a>
+            <h6>Al Islam (7A, 9), Bahasa Arab</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Irfan Nur Hidayat</h5></a>
+            <h6>Kemuhammadiyahan, IPS (7)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Ujang Naser, S.Pd</h5></a>
+            <h6>PPKn</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Agus Taqwim Khoiri, S.Pd</h5></a>
+            <h6>PJOK</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Nur Fatimah, S.Pd., Gr</h5></a>
+            <h6>IPS (8, 9)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Dwi Eta, S.Pd., M.Sc</h5></a>
+            <h6>Matematika (7, 8ABD), Prakarya (8AB)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Didi Haryanto, S.Pd</h5></a>
+            <h6>Matematika (8C, 9)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Deris Amung Prasetyo</h5></a>
+            <h6>Informatika (7, 8)</h6>
+        </div>
+    </div>
+
+    <div class="section-item-slider">
+        <a href="detail-post.html"><img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt=""></a>
+        <div class="section-item-caption">
+            <a href="detail-post.html"><h5>Sutarno</h5></a>
+            <h6>KTU</h6>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Tampilan Guru Menyusun ke Bawah (Disembunyikan Awalnya) -->
+<div class="row" id="list-guru" style="display: none; padding-top: 20px;">
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Hasan Azis, S.Pd.I.</h5>
+        <h6>Kepala Sekolah</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Warsini, S.Pd</h5>
+        <h6>Bahasa Inggris (7, 8ABD)<br>Wali Kelas 7B</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">May Wardani, S.IPust</h5>
+        <h6>Pustakawan<br>Bahasa Jawa (9), Prakarya (7, 8C)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Puput Widha Andani, S.Pd., Gr</h5>
+        <h6>Bahasa Indonesia (7, 8CD)<br>Wali Kelas 7A, Bendahara BOS</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Heri Kristanto, S.Pd., Gr</h5>
+        <h6>IPA (9), Bahasa Jawa (8)<br>Wali Kelas 9A, Waka Humas, Tim Kurikulum</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Triyatmi, S.Pd</h5>
+        <h6>Bahasa Inggris (8C, 9), Bahasa Jawa (7)<br>Wali Kelas 9B, Waka Kesiswaan</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Kartini, S.Pd., Gr</h5>
+        <h6>Bahasa Indonesia (8AB, 9)<br>Wali Kelas 8B, Bendahara Sekolah</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Asim Tri Cahyani, S.Pd</h5>
+        <h6>BK (7, 9), Seni (9)<br>Wali Kelas 8A, Waka Kurikulum</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Untia Pungki Rastyanti, S.Pd., G</h5>
+        <h6>IPA (7, 8)<br>Wali Kelas 9C</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Arizal Mulana Rusdi, S.Pd., Gr</h5>
+        <h6>Al Islam (7B, 8), Informatika (9)<br>Wali Kelas 9D</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Handayani, S.Pd., Gr</h5>
+        <h6>Al Islam (7A, 9), Bahasa Arab</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Irfan Nur Hidayat</h5>
+        <h6>Kemuhammadiyahan, IPS (7)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Ujang Naser, S.Pd</h5>
+        <h6>PPKn</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Agus Taqwim Khoiri, S.Pd</h5>
+        <h6>PJOK</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Nur Fatimah, S.Pd., Gr</h5>
+        <h6>IPS (8, 9)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Dwi Eta, S.Pd., M.Sc</h5>
+        <h6>Matematika (7, 8ABD), Prakarya (8AB)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Didi Haryanto, S.Pd</h5>
+        <h6>Matematika (8C, 9)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Deris Amung Prasetyo</h5>
+        <h6>Informatika (7, 8)</h6>
+    </div>
+
+    <div class="col-md-4 text-center mb-4">
+        <img class="foto-guru" src="{{ asset('img/fotokosong.jpg') }}" alt="" style="width: 100%; height: auto;">
+        <h5 class="mt-2">Sutarno</h5>
+        <h6>KTU</h6>
+    </div>
+</div>
+
+
+
+       <!-- Tombol Lihat Semua -->
+<div class="tombol-selengkapnya text-center mt-3">
+    <a href="javascript:void(0);" onclick="tampilkanSemuaGuru(this)" class="btn btn-more" id="btnToggleGuru">Lihat Semua Guru</a>
+</div>
+
+<script>
+function tampilkanSemuaGuru(button) {
+    var slider = document.getElementById('tenaga-pendidik-slider');
+    var listGuru = document.getElementById('list-guru');
+    var btnText = document.getElementById('btnToggleGuru');
+
+    if (slider.style.display !== 'none') {
+        // Sembunyikan slider, tampilkan daftar guru
+        slider.style.display = 'none';
+        listGuru.style.display = 'flex';
+        listGuru.style.flexWrap = 'wrap';
+        btnText.textContent = 'Tutup Daftar Guru';
+    } else {
+        // Tampilkan slider, sembunyikan daftar guru
+        slider.style.display = 'block';
+        listGuru.style.display = 'none';
+        btnText.textContent = 'Lihat Semua Guru';
+    }
+}
+</script>
+
+
+    <section id="berita" class="py-5">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">

@@ -54,21 +54,6 @@
                     <span>Sarana Prasarana</span>
                 </a>
             </li>
-
-
-            <li class="nav-title">Pengguna & Pengaturan</li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-users"></i>
-                    <span>Pengguna</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-cog"></i>
-                    <span>Pengaturan</span>
-                </a>
-            </li>
         </ul>
     </nav>
 

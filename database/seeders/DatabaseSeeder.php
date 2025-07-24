@@ -25,13 +25,5 @@ class DatabaseSeeder extends Seeder
             'role_id' => $adminRole->id,
             'password' => Hash::make('admin123'),
         ]);
-
-        // Create Regular User for testing
-        User::create([
-            'name' => 'User Test',
-            'email' => 'user@smpmuhkelir.com',
-            'role_id' => $userRole->id,
-            'password' => Hash::make('user123'),
-        ]);
     }
 }

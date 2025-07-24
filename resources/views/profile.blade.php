@@ -29,10 +29,6 @@
                                     <h1 class="section-post-title">Profil Kami
                                     </h1>
                                     <div class="section-post-meta">
-                                        <span><i class="fas fa-user"></i> Oleh: <a href="" class="author">Arbi
-                                                Syarifudin</a></span>
-                                        <span><i class="fas fa-clock"></i> 25 Oktober 2019</span>
-                                        <span><i class="fas fa-eye"></i> 256 kali</span>
                                     </div>
                                     <div class="section-post-content">
                                         <p>SMP Muhammadiyah Watukelır: Menorehkan Prestasi di Bumi Sukoharjo
@@ -67,6 +63,33 @@
                                             telepon 02735331415 atau email smpmuhkelir@gmail.com untuk informasi
                                             lebih lanjut.</p>
                                     </div> <!-- .section-post-content -->
+
+                                                        <!-- Tambahan bagian Visi, Misi, Motto -->
+                                    <section id="visi-misi" style="margin-top: 50px;">
+                                    <h2>Visi</h2>
+                                    <p>
+                                        Menjadi lembaga pendidikan menengah pertama yang unggul dalam prestasi akademik dan karakter islami yang kuat, serta mampu berkontribusi aktif dalam pembangunan bangsa.
+                                    </p>
+
+                                    <h2>Misi</h2>
+                                    <ul>
+                                        <li>Menyelenggarakan pendidikan yang berkualitas dan berorientasi pada pengembangan potensi peserta didik secara menyeluruh.</li>
+                                        <li>Mengembangkan karakter siswa yang beriman, bertakwa, dan berakhlak mulia sesuai dengan nilai-nilai Islam.</li>
+                                        <li>Mendorong inovasi dan kreativitas dalam proses pembelajaran untuk meningkatkan kompetensi siswa.</li>
+                                        <li>Membangun kerjasama dengan masyarakat dan berbagai pihak guna mendukung keberhasilan pendidikan.</li>
+                                    </ul>
+
+                                    <h2>Motto</h2>
+                                    <p><em>"Berprestasi, Berakhlak, Beriman, dan Berkompeten"</em></p>
+                                    </section>
+
+                                    <!-- Tambahan bagian Struktur Organisasi -->
+                                    <section id="struktur-organisasi" style="margin-top: 50px;">
+                                    <h2>Struktur Organisasi</h2>
+                                    <img class="img-fluid" src="{{ asset('img/strukturorganisasisekolah.jpg') }}" alt="Struktur Organisasi">
+                                    <p style="font-style: italic; margin-top: 10px;">Struktur organisasi sekolah yang menunjukkan susunan kepengurusan dan staf pengajar.</p>
+                                    </section>
+                                    
                                     <div class="section-post-share">
                                         <ul class="list-unstyled">
                                             <li>Bagikan:</li>
@@ -88,56 +111,7 @@
 
             </div> <!-- .row -->
         </div> <!-- .container -->
-
-        <section id="galeri">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Galeri / Dokumentasi</h2>
-                </div>
-                <div class="section-body">
-                    <div id="slider-tools-3"></div>
-                    <div class="owl-carousel" id="galeri-slider">
-                        <div class="section-item-slider">
-                            <a href=""><img class="foto-galeri" src="{{ asset('img/berita1.jpg') }}"
-                                    alt="Latihan kepemimpinan"></a>
-                            <div class="section-item-caption">
-                                <a href="">
-                                    <h5>Latihan Kepemimpinan 2023</h5>
-                                </a>
-                                <h6>SMP MUHAMMADIYAH WATUKELIR</h6>
-                            </div>
-                        </div>
-                        <div class="section-item-slider">
-                            <a href=""><img class="foto-galeri" src="{{ asset('img/berita2.jpg') }}"
-                                    alt="Latihan Kepemimpinan"></a>
-                            <div class="section-item-caption">
-                                <a href="">
-                                    <h5>Pembekalan Pelatihan kepemimpinan</h5>
-                                </a>
-                                <h6>SMP MUHAMMADIYAH WATUKELIR</h6>
-                            </div>
-                        </div>
-                        <div class="section-item-slider">
-                            <div class="video-wrapper video-galeri">
-                                <iframe src="https://www.youtube.com/embed/n0Q_XQgvaJQ" frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="section-item-caption">
-                                <a href="">
-                                    <h5>.......</h5>
-                                </a>
-                                <h6>GOR SMP MUHAMMADIYAH WATUKELIR</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tombol-selengkapnya">
-                    <a href="galeri.html" class="btn btn-more">Lihat Galeri Lainnya</a>
-                </div>
-            </div>
-        </section>
-    </div> <!-- konten -->
+        
 
     <div id="scroll-to-top">
         <a href="#topbar"><i class="fas fa-angle-up"></i></a>
