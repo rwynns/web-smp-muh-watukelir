@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Ekstrakurikuler;
 use App\Models\Guru;
+use App\Models\Prestasi;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,7 @@ class HomeController extends Controller
         $ekstrakurikuler = Ekstrakurikuler::all();
         $guruLimit = Guru::orderBy('nama')->take(4)->get();
         $guruAll = Guru::orderBy('nama')->get();
-        $prestasiTerbaru = \App\Models\Prestasi::orderBy('created_at', 'desc')->take(3)->get();
+        $prestasiTerbaru = Prestasi::orderBy('created_at', 'desc')->take(3)->get();
 
         return view('index', [
             'beritaTerbaru' => $beritaTerbaru,
