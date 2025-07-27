@@ -25,27 +25,48 @@ class Ekstrakurikuler extends Model
     protected $fillable = [
         'nama',
         'gambar_path',
+        'logo_path',
         'deskripsi',
     ];
 
     /**
      * Mendapatkan URL untuk file gambar.
      *
-     * @return string
+     * @return string|null
      */
     public function getGambarUrlAttribute()
     {
-        return asset('storage/' . $this->gambar_path);
+        return $this->gambar_path ? asset('storage/' . $this->gambar_path) : null;
+    }
+
+    /**
+     * Mendapatkan URL untuk file logo.
+     *
+     * @return string|null
+     */
+    public function getLogoUrlAttribute()
+    {
+        return $this->logo_path ? asset('storage/' . $this->logo_path) : null;
     }
 
     /**
      * Mendapatkan ekstensi file gambar.
      *
-     * @return string
+     * @return string|null
      */
     public function getGambarExtensionAttribute()
     {
-        return pathinfo($this->gambar_path, PATHINFO_EXTENSION);
+        return $this->gambar_path ? pathinfo($this->gambar_path, PATHINFO_EXTENSION) : null;
+    }
+
+    /**
+     * Mendapatkan ekstensi file logo.
+     *
+     * @return string|null
+     */
+    public function getLogoExtensionAttribute()
+    {
+        return $this->logo_path ? pathinfo($this->logo_path, PATHINFO_EXTENSION) : null;
     }
 
     /**
@@ -53,9 +74,19 @@ class Ekstrakurikuler extends Model
      *
      * @return bool
      */
-    public function getFileExistsAttribute()
+    public function getGambarFileExistsAttribute()
     {
-        return Storage::disk('public')->exists($this->gambar_path);
+        return $this->gambar_path && Storage::disk('public')->exists($this->gambar_path);
+    }
+
+    /**
+     * Cek apakah file logo tersedia.
+     *
+     * @return bool
+     */
+    public function getLogoFileExistsAttribute()
+    {
+        return $this->logo_path && Storage::disk('public')->exists($this->logo_path);
     }
 
     /**

@@ -61,8 +61,9 @@
                                     <div class="d-flex align-items-center gap-2">
                                         @if ($item->gambar_path)
                                             <div class="ekskul-thumbnail">
-                                                <img src="{{ $item->gambar_url }}" alt="{{ $item->nama }}" width="60"
-                                                    height="60" class="rounded object-fit-cover">
+                                                <img src="{{ asset('storage/' . $item->gambar_path) }}"
+                                                    alt="{{ $item->nama }}" width="60" height="60"
+                                                    class="rounded object-fit-cover">
                                             </div>
                                         @else
                                             <div class="ekskul-thumbnail bg-light rounded d-flex align-items-center justify-content-center"
@@ -71,7 +72,17 @@
                                             </div>
                                         @endif
                                         <div>
-                                            <h6 class="mb-0">{{ $item->nama }}</h6>
+                                            <h6 class="mb-1">{{ $item->nama }}</h6>
+                                            @if ($item->logo_path)
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <img src="{{ asset('storage/' . $item->logo_path) }}"
+                                                        alt="{{ $item->nama }} Logo" width="20" height="20"
+                                                        class="rounded-circle object-fit-cover">
+                                                    <small class="text-muted">Logo tersedia</small>
+                                                </div>
+                                            @else
+                                                <small class="text-muted">Tanpa logo</small>
+                                            @endif
                                         </div>
                                     </div>
                                 </td>

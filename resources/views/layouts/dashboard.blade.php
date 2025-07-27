@@ -15,6 +15,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
 
@@ -57,14 +60,20 @@
         </main>
     </div>
 
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
 
-    <!-- Custom Dashboard JS -->
-    <script src="{{ asset('js/admin-dashboard.js') }}"></script>
+
 
     <!-- Additional Scripts -->
     @yield('scripts')
@@ -181,6 +190,8 @@
         document.getElementById('sidebarToggler').addEventListener('click', function() {
             document.getElementById('sidebar').classList.toggle('mobile-open');
         });
+
+        console.log('jQuery version:', typeof $ === 'function' ? $.fn.jquery : 'NOT LOADED');
     </script>
 </body>
 

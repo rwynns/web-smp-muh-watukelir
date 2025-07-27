@@ -4,28 +4,27 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\SaranaPrasaranaController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Berita;
+use App\Models\Ekstrakurikuler;
 
 
-Route::get('/', function () {
-    $beritaTerbaru = Berita::latest()
-        ->take(6)
-        ->get();
+use App\Http\Controllers\HomeController;
 
-    return view('index', compact('beritaTerbaru'));
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/profile', function () {
     return view('profile');
 });
 
 Route::get('/ekstrakurikuler', function () {
-    return view('ekstrakurikuler');
+    $ekstrakurikuler = Ekstrakurikuler::all();
+    return view('ekstrakurikuler', compact('ekstrakurikuler'));
 });
 
 Route::get('/prestasi', function () {
@@ -75,6 +74,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     // Galeri routes
     Route::resource('galeri', GaleriController::class);
     Route::resource('ekstrakurikuler', EkstrakurikulerController::class);
+    Route::resource('guru', GuruController::class);
     Route::resource('sarana-prasarana', SaranaPrasaranaController::class)->parameters([
         'sarana-prasarana' => 'saranaPrasarana'
     ]);

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ekstrakurikuler', function (Blueprint $table) {
+        Schema::create('guru', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('gambar_path')->nullable();
-            $table->string('logo_path')->nullable();
-            $table->text('deskripsi');
+            $table->json('jabatan'); // Array untuk multiple jabatan
+            $table->string('foto')->nullable(); // Path foto guru
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ekstrakurikuler');
+        Schema::dropIfExists('guru');
     }
 };

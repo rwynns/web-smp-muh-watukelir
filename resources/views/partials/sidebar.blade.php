@@ -42,6 +42,12 @@
                     <span>Ekstrakurikuler</span>
                 </a>
             </li>
+            <li class="nav-item {{ request()->is('admin/guru*') ? 'active' : '' }}">
+                <a href="{{ route('admin.guru.index') }}" class="nav-link">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+            </li>
             <li class="nav-item nav-item {{ request()->is('admin/ppdb*') ? 'active' : '' }}">
                 <a href="{{ route('admin.ppdb.index') }}" class="nav-link">
                     <i class="fa-solid fa-graduation-cap"></i>

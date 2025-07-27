@@ -663,6 +663,72 @@ section:nth-of-type(2n) {
   transform: translateY(-50%);
 }
 
+/* CSS untuk card ekstrakurikuler baru */
+.ekstrakurikuler-card {
+  background: #009384;
+  border-radius: 15px;
+  padding: 30px 20px;
+  color: yellow;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ekstrakurikuler-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #008B8B, #20B2AA);
+}
+
+.ekstrakurikuler-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.ekstrakurikuler-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ekstrakurikuler-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ekstrakurikuler-title h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ekstrakurikuler-card {
+    height: 150px;
+    padding: 20px 15px;
+  }
+  
+  .ekstrakurikuler-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .ekstrakurikuler-title h4 {
+    font-size: 1rem;
+  }
+}
+
 /* CSS untuk berita */
 
 #berita .row {
@@ -1906,7 +1972,7 @@ a.pswp__share--download {
 }
 
 .ekskul-image img {
-    height: 220px;
+    height: 150px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -1984,6 +2050,77 @@ a.pswp__share--download {
 #modalContent {
     line-height: 1.7;
     white-space: pre-line;
+}
+
+/* Styling untuk ekskul tanpa gambar */
+.ekskul-no-image {
+    height: 220px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+.no-image-content {
+    text-align: center;
+    color: #6c757d;
+}
+
+.no-image-content h5 {
+    color: #495057;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Logo styling */
+.ekskul-logo-small {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.ekskul-logo-large {
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styling untuk no image */
+.modal-no-image {
+    height: 250px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-no-image-content {
+    text-align: center;
+    color: #6c757d;
+}
+
+.modal-no-image-content h5 {
+    color: #495057;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-logo-small {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .section-title:after {
