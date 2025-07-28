@@ -7,7 +7,8 @@
                         <li><a href="tel:085773716731"><i class="fas fa-phone"></i> 2147483647</a></li>
                         <li><a href="mailto:arbisyarifudin@gmail.com"><i class="fas fa-envelope"></i>
                                 smpmuhkelir@gmail.com</a></li>
-                        <li class="headline"><a href="#"><i class="fas fa-map-marker-alt"></i> Watukelir, Jatingarang, Kec. Weru, Sukoharjo, Jawa Tengah</a></li>
+                        <li class="headline"><a href="#"><i class="fas fa-map-marker-alt"></i> Watukelir,
+                                Jatingarang, Kec. Weru, Sukoharjo, Jawa Tengah</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-12">
@@ -32,7 +33,8 @@
                 <div class="col-md-8">
                     <div class="brand">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('img/logo.png') }}" alt="Logo" title="Logo" style="width: 80px; height: auto;">
+                            <img src="{{ asset('img/logo.png') }}" alt="Logo" title="Logo"
+                                style="width: 80px; height: auto;">
 
                         </a>
                         <div class="brand-title">
@@ -50,12 +52,12 @@
     <!-- menu -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#my-nav"
+                aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span> Menu
             </button>
             <div id="my-nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/') }}">Beranda</a>
                     </li>
@@ -100,9 +102,9 @@
                 </ul>
 
                 <!-- Admin Login Button untuk Mobile Menu -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item admin-login-nav d-lg-none">
-                        <a class="nav-link admin-login-btn" href="{{ url('/admin/login') }}">
+                        <a class="nav-link admin-login-btn" href="{{ url('/login') }}" title="Login Admin">
                             <i class="fas fa-user-shield"></i> Login Admin
                         </a>
                     </li>
