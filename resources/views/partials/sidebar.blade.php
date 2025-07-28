@@ -1,15 +1,12 @@
 <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <div class="brand">
+    <div class="sidebar-header d-flex justify-content-between align-items-center">
+        <div class="brand d-flex align-items-center">
             <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo">
-            <span class="brand-text">SMP Muh Watukelir</span>
+            <span class="brand-text ms-2">SMP Muh Watukelir</span>
         </div>
-        <button class="btn-toggle-menu d-md-none" id="sidebarToggler">
-            <i class="fas fa-bars"></i>
-        </button>
     </div>
 
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" id="sidebarNav">
         <ul class="nav-list">
             <li class="nav-title">Menu Utama</li>
             <li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">

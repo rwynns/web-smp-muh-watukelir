@@ -17,8 +17,17 @@
                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="admin-login-top"><a href="{{ url('/login') }}" title="Login Admin"><i
-                                    class="fas fa-user-shield"></i> Admin</a></li>
+                        <li class="admin-login-top">
+                            @if (Auth::check() && Auth::user()->role_id == 1)
+                                <a href="{{ url('/admin/dashboard') }}" title="Dashboard Admin">
+                                    <i class="fas fa-user-shield"></i> Admin
+                                </a>
+                            @else
+                                <a href="{{ url('/login') }}" title="Login Admin">
+                                    <i class="fas fa-user-shield"></i> Admin
+                                </a>
+                            @endif
+                        </li>
                     </ul>
                 </div>
             </div> <!-- .row -->
@@ -104,9 +113,16 @@
                 <!-- Admin Login Button untuk Mobile Menu -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item admin-login-nav d-lg-none">
-                        <a class="nav-link admin-login-btn" href="{{ url('/login') }}" title="Login Admin">
-                            <i class="fas fa-user-shield"></i> Login Admin
-                        </a>
+                        @if (Auth::check() && Auth::user()->role_id == 1)
+                            <a class="nav-link admin-login-btn" href="{{ url('/admin/dashboard') }}"
+                                title="Dashboard Admin">
+                                <i class="fas fa-user-shield"></i> Dashboard Admin
+                            </a>
+                        @else
+                            <a class="nav-link admin-login-btn" href="{{ url('/login') }}" title="Login Admin">
+                                <i class="fas fa-user-shield"></i> Login Admin
+                            </a>
+                        @endif
                     </li>
                 </ul>
             </div>
